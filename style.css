@@ -2,7 +2,8 @@
   display: flex;
   flex-direction: column;
   margin: auto auto; 
-  background-color: #003;
+  background-color: #FFF;
+  height: auto;
 }
 
 #switch_div {
@@ -11,10 +12,9 @@
   justify-content: center;
   background-color: white;
   margin: auto auto;
-  margin-top: 100px;
   width: 300px;
   height: 300px;
-  border: 5px solid white;
+  border: 5px solid black;
   border-radius: 5px;
 }
 
@@ -34,14 +34,14 @@
 
 .switch {
   position: absolute;
-  border: 4px solid white;
+  border: 4px solid black;
   border-radius: 5px;
   height: 7rem;
   width: 5rem;
   transform: skew(5deg);
   box-shadow: rgba(0, 0, 0, 10) 0px 25px 20px -20px;
   margin: 30% auto;
-  background-color: black;
+  background-color: #FFF;
   z-index: 1;
 }
 
@@ -57,9 +57,9 @@
 .bulb_top {
   width: 150px;
   height: 150px;
-  border: solid 5px #000;
   border-radius: 50%;
-  border-color: #000 #000 transparent #000;
+  border: 5px solid #FFF;
+  border-color: #FFF #FFF transparent #FFF;
   margin: 30px auto;
   background-color: none;
 }
@@ -77,7 +77,7 @@
 .sidelines_styling {
   width: 5px;
   height: 30px;
-  background-color: black;
+  background-color: #FFF;
 }
 
 #left_sideline {
@@ -91,23 +91,27 @@
 
 #bulb_bottom_line1 {
   width: 70px;
-  background-color: black;
+  background-color: #FFF;
   height: 5px;
   margin: 10px auto;
 }
 
 #bulb_bottom_line2 {
   width: 60px;
-  background-color: black;
+  background-color: #FFF;
   height: 5px;
   margin: 10px auto;
 }
 
 #bulb_bottom_line3 {
   width: 50px;
-  background-color: black;
+  background-color: #FFF;
   height: 5px;
   margin: 10px auto;
+}
+
+body:has(input[type='checkbox']:checked) #page_container {
+  background-color: #000;
 }
 
 body:has(input[type='checkbox']:checked) .bulb_top {
@@ -132,11 +136,25 @@ body:has(input[type='checkbox']:checked) #bulb_bottom_line3 {
 
 body:has(input[type='checkbox']:checked) .switch {
   transform: skew(-10deg);
-  box-shadow: rgba(0, 0, 0, 10) 5px -25px 20px -20px;
+  box-shadow: 5px -25px 20px -20px;
   border: 5px solid #00FF00;
+  background-color: #000;
 }
 
 body:has(input[type='checkbox']:checked) #switch_div {
-  border: 5px solid #00FF00;
+  border: 5px solid #000;
+  background-color: #00FF00;
+}
+
+#page_container::before {
+  content: 'Light Mode';
+  font-family: Rubik;
+  font-size: 1.5rem;
+  margin: 50px auto;
+}
+
+body:has(input[type='checkbox']:checked) #page_container::before {
+  content: 'Dark Mode';
+  color: #00FF00;
 }
 
